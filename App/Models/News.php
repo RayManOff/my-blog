@@ -72,14 +72,14 @@ class News extends Model
         return ([] == $res) ? false : $res;
     }
 
-    public function fill($data)
+    public function fill(array $data)
     {
         $this->title = $data['title'];
         $this->text = $data['text'];
         $this->author = $data['author'];
     }
 
-    public function checkData($data){
+    public function checkData(array $data){
 
         return ((!empty($data['title'])) &&
                (!empty($data['text'])) &&

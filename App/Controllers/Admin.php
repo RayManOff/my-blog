@@ -36,7 +36,6 @@ class Admin extends Controller {
                 $this->view->title = 'Добавить новость';
                 $this->view->display(__DIR__ . '/../Templates/News/Add.php');
             }
-
     }
 
     /**
