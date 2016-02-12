@@ -19,8 +19,7 @@ class Admin extends Controller {
     }
     /**
      * Действие для добовления новости
-     * Если пришло из формы $_POST (title, text, author) то добавляем и к действию Edit
-     * Не пришло выводим форму добавления
+     *
      */
     protected function actionAdd ()
     {
