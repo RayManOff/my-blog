@@ -33,6 +33,7 @@ class News extends Model
                 $author->save();
                 $this->data['author_id'] = $author->id;
             }
+
         } else {
 
             $this->data[$k] = $v;
@@ -70,5 +71,21 @@ class News extends Model
         $res = $db->query($sql);
         return ([] == $res) ? false : $res;
     }
+
+    public function fill($data)
+    {
+        $this->title = $data['title'];
+        $this->text = $data['text'];
+        $this->author = $data['author'];
+    }
+
+    public function checkData($data){
+
+        return ((!empty($data['title'])) &&
+               (!empty($data['text'])) &&
+               (!empty($data['author'])));
+
+    }
+
 
 }

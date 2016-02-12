@@ -7,6 +7,7 @@ use App\TArrayAccess;
 
 /**
  * Class Author
+ * @property integer $id
  * @property string $author_name
  */
 

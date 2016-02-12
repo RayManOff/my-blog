@@ -22,37 +22,39 @@ class Admin extends Controller {
      * Если пришло из формы $_POST (title, text, author) то добавляем и к действию Edit
      * Не пришло выводим форму добавления
      */
-    protected function actionAdd () {
-
-        if((!empty($_POST['title'])) && (!empty($_POST['text'])) && (!empty($_POST['author']))) {
-
+    protected function actionAdd ()
+    {
             $news = new News();
-            $news->title = $_POST['title'];
-            $news->text = $_POST['text'];
-            $news->author = $_POST['author'];
-            $news->save();
-            $this->redirect('/Admin/Edit');
-        } else {
-            $this->view->title = 'Добавить новость';
-            $this->view->display(__DIR__ . '/../Templates/News/Add.php');
-        }
+
+            if($news->checkData($_POST))
+            {
+                $news->fill($_POST);
+                $news->save();
+                $this->redirect('/Admin/Edit');
+
+            } else {
+
+                $this->view->title = 'Добавить новость';
+                $this->view->display(__DIR__ . '/../Templates/News/Add.php');
+            }
+
     }
 
     /**
      * Действие обновления новости по id
      */
-    protected function actionUpdate(){
+    protected function actionUpdate()
+    {
 
-        if((!empty($_POST['title'])) && (!empty($_POST['text'])) && (!empty($_POST['author']))) {
+        $article = \App\Models\News::findOneById($_GET['id']);
 
-            $id = (int)$_GET['id'];
-            $article = \App\Models\News::findOneById($id);
-            $article->title = $_POST['title'];
-            $article->text = $_POST['text'];
-            $article->author = $_POST['author'];
+        if($article->checkData($_POST)){
+
+            $article->fill($_POST);
             $article->save();
             $this->redirect('/Admin/Edit');
         } else {
+
             $this->redirect('/Admin/Edit');
         }
     }
@@ -62,8 +64,7 @@ class Admin extends Controller {
      */
     protected function actionDelete (){
 
-        $id = (int)$_GET['id'];
-        $article= \App\Models\News::findOneById($id);
+        $article= \App\Models\News::findOneById($_GET['id']);
         $article->delete();
         $this->redirect('/Admin/Edit');
     }
