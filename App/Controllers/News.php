@@ -11,7 +11,7 @@ class News extends Controller {
     /**
      * Действие для вывода всех новостей
      */
-    protected function actionAll(){
+    protected function actionIndex(){
 
         $this->view->title = 'Новости';
         $this->view->news = \App\Models\News::findAll();

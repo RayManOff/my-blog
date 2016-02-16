@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 
 use App\Classes\Controller;
+use App\Classes\MultiException;
 use App\Models\News;
 
 class Admin extends Controller {
@@ -11,7 +12,7 @@ class Admin extends Controller {
     /**
      * Выводит все новости с возможеостью редактирования
      */
-    protected function actionEdit(){
+    protected function actionIndex(){
 
         $this->view->title = 'Админка';
         $this->view->news = \App\Models\News::findAll();
@@ -23,19 +24,23 @@ class Admin extends Controller {
      */
     protected function actionAdd ()
     {
-            $news = new News();
+        if($this->isPost()){
 
-            if($news->checkData($_POST))
-            {
+            try {
+                $news = new News();
+                $news->checkData($_POST);
                 $news->fill($_POST);
                 $news->save();
-                $this->redirect('/Admin/Edit');
-
-            } else {
-
-                $this->view->title = 'Добавить новость';
-                $this->view->display(__DIR__ . '/../Templates/News/Add.php');
+                $this->redirect('/Admin');
+            } catch (MultiException $error) {
+                $this->view->errors = $error;
             }
+        } else {
+            $this->view->errors = null;
+        }
+        //var_dump($news);
+        $this->view->display(__DIR__ . '/../Templates/News/Add.php');
+
     }
 
     /**

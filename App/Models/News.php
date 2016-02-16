@@ -3,6 +3,7 @@
 namespace App\Models;
 use App\Classes\DB;
 use App\Classes\Model;
+use App\Classes\MultiException;
 use App\Classes\TCollection;
 
 
@@ -80,13 +81,14 @@ class News extends Model
         $this->author = $data['author'];
     }
 
-    public function checkData(array $data){
+    public function checkData($data){
 
-        return ((!empty($data['title'])) &&
-               (!empty($data['text'])) &&
-               (!empty($data['author'])));
+        $error = new MultiException();
 
+        if(empty($data['title']) || empty($data['text']) || empty($data['author'])){
+           $error[] = new \Exception('Все поля должны быть заполнены');
+            throw $error;
+        }
     }
-
 
 }

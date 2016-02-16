@@ -26,8 +26,18 @@ abstract class Controller {
 
     public function redirect($url)
     {
-        header("location: " . $url);
-        exit;
+        header('location: ' . $url);
+        exit();
+    }
+
+    public function isPost(){
+
+        return $_SERVER['REQUEST_METHOD'] == 'POST';
+    }
+
+    public function isGet(){
+
+        return $_SERVER['REQUEST_METHOD'] == 'GET';
     }
 
 }

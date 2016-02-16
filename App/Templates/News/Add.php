@@ -19,8 +19,15 @@
     <![endif]-->
 </head>
 <body>
-<h1 class="text-center"><?php echo $title; ?></h1><br>
+<h1 class="text-center">Добавить новость</h1><br>
 <div class="container">
+    <?php if($errors !== null):?>
+    <?php foreach ($errors as $error): ?>
+        <div class="alert alert-danger">
+            <?php echo $error->getMessage(); ?>
+        </div>
+    <?php endforeach; ?>
+    <?php endif?>
         <form class="form-horizontal" role="form" action="/Admin/Add" method="post">
         <div class="form-group">
             <label for="title" class="col-sm-2 control-label">Заголовок</label>

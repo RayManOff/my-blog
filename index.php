@@ -8,7 +8,7 @@ $url = $_SERVER['REQUEST_URI'];
 $path = explode('/', parse_url($url, PHP_URL_PATH));
 
 $ctr = (!empty($path[1])) ? ucfirst($path[1]) : 'News';
-$act = (!empty($path[2])) ? ucfirst($path[2]) : 'All';
+$act = (!empty($path[2])) ? ucfirst($path[2]) : 'Index';
 
 $controllerName = '\App\\Controllers\\' . $ctr;
 try{
