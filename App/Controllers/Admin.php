@@ -24,22 +24,22 @@ class Admin extends Controller {
      */
     protected function actionAdd ()
     {
-        if($this->isPost()){
-
+        if ($this->isPost()) {
             try {
-                $news = new News();
-                $news->checkData($_POST);
-                $news->fill($_POST);
-                $news->save();
-                $this->redirect('/Admin');
-            } catch (MultiException $error) {
-                $this->view->errors = $error;
-            }
-        } else {
-            $this->view->errors = null;
-        }
-        //var_dump($news);
-        $this->view->display(__DIR__ . '/../Templates/News/Add.php');
+                 $news = new News();
+                 $news->fill($_POST);
+                 $news->save();
+                 $this->redirect('/Admin');
+             } catch (MultiException $error) {
+                 $this->view->errors = $error;
+             }
+         } else {
+
+             $this->view->errors = null;
+         }
+
+         $this->view->display(__DIR__ . '/../Templates/News/Add.php');
+
 
     }
 
@@ -48,18 +48,19 @@ class Admin extends Controller {
      */
     protected function actionUpdate()
     {
+        if($this->isPost()){
+            try {
+                $article = \App\Models\News::findOneById($_GET['id']);
+                $article->checkData($_POST);
+                $article->fill($_POST);
+                $article->save();
+                $this->redirect('/Admin/Edit');
+            } catch (MultiException $error) {
 
-        $article = \App\Models\News::findOneById($_GET['id']);
-
-        if($article->checkData($_POST)){
-
-            $article->fill($_POST);
-            $article->save();
-            $this->redirect('/Admin/Edit');
-        } else {
-
-            $this->redirect('/Admin/Edit');
+            }
         }
+
+
     }
 
     /**

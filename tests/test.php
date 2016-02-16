@@ -1,14 +1,22 @@
 <?php
 require __DIR__ . '/../autoload.php';
 
-$a = new \App\Classes\Collection();
-$a[1] = 1;
-$a[]= 2;
-$a[22] = 54;
+$data = ['title'=> 'ffsdf', 'text'=>'adf'];
+$news = new \App\Models\News();
+$news->fill($data);
+var_dump($news);
 
-foreach ($a as $b) {
-    echo $b;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 $author = \App\Models\News::findOneById(1);

@@ -12,22 +12,27 @@ use App\Classes\TCollection;
  * @property integer $id
  * @property string $title
  * @property string $text
+ * @property string $author
  * @property integer $author_id
  */
 
 class News extends Model
-            implements \ArrayAccess {
+            implements \ArrayAccess
+{
 
     use TCollection;
 
     const TABLE = 'News';
 
-    public function __set($k, $v) {
+    protected $required_prop = ['title', 'text', 'author'];
 
-        if('author' == $k){
+    public function __set($k, $v)
+    {
+
+        if ('author' == $k) {
 
             $author = Author::findOneByColumn('author_name', $v);
-            if(false !== $author) {
+            if (false !== $author) {
                 $this->data['author_id'] = $author->id;
             } else {
                 $author = new Author();
@@ -42,10 +47,11 @@ class News extends Model
         }
     }
 
-    public function __get($k) {
+    public function __get($k)
+    {
 
-        if('author' == $k) {
-            if(!empty($this->data['author_id'])){
+        if ('author' == $k) {
+            if (!empty($this->data['author_id'])) {
                 return Author::findOneById($this->data['author_id']);
             } else {
                 return false;
@@ -55,7 +61,8 @@ class News extends Model
         }
     }
 
-    public function __isset($k){
+    public function __isset($k)
+    {
 
         if ('author' == $k) {
             return !empty($this->data['author_id']);
@@ -76,19 +83,30 @@ class News extends Model
 
     public function fill(array $data)
     {
-        $this->title = $data['title'];
-        $this->text = $data['text'];
-        $this->author = $data['author'];
-    }
+        foreach ($data as $prop => $value) {
 
-    public function checkData($data){
+            if('' !== $value){
 
-        $error = new MultiException();
+                if(in_array($prop, $this->required_prop)){
+                    $this->$prop = $value;
+                }
+            } else {
+                /**
+                 * @var MultiException $error
+                 */
+                if(!isset($error)){
+                    $error = new MultiException();
+                }
 
-        if(empty($data['title']) || empty($data['text']) || empty($data['author'])){
-           $error[] = new \Exception('Все поля должны быть заполнены');
+                $error[] = new \Exception('Незаполненное поле '. $prop);
+            }
+        }
+
+        if(isset($error)){
+
             throw $error;
         }
+
     }
 
 }
