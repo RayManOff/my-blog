@@ -3,7 +3,8 @@
 namespace App\Models;
 
 use App\Classes\Model;
-use App\TArrayAccess;
+use App\Classes\TCollection;
+
 
 /**
  * Class Author
@@ -14,7 +15,7 @@ use App\TArrayAccess;
 class Author extends Model
             implements \ArrayAccess {
 
-    use TArrayAccess;
+    use TCollection;
 
     const TABLE = 'authors';
 

@@ -2,9 +2,6 @@
 
 namespace App;
 
-
-//use App\Classes\Model;
-
 trait TMagic {
 
     protected $data = [];

@@ -3,7 +3,8 @@
 namespace App\Models;
 use App\Classes\DB;
 use App\Classes\Model;
-use App\TArrayAccess;
+use App\Classes\TCollection;
+
 
 
 /**
@@ -16,7 +17,7 @@ use App\TArrayAccess;
 class News extends Model
             implements \ArrayAccess {
 
-    use TArrayAccess;
+    use TCollection;
 
     const TABLE = 'News';
 

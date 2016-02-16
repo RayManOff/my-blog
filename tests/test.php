@@ -1,10 +1,14 @@
 <?php
 require __DIR__ . '/../autoload.php';
 
-$admin = \App\Models\Admin::validate('', 85208520 );
-var_dump($admin);
+$a = new \App\Classes\Collection();
+$a[1] = 1;
+$a[]= 2;
+$a[22] = 54;
 
-
+foreach ($a as $b) {
+    echo $b;
+}
 
 /*
 $author = \App\Models\News::findOneById(1);
