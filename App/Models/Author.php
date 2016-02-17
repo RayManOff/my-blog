@@ -8,7 +8,6 @@ use App\Classes\TCollection;
 
 /**
  * Class Author
- * @property integer $id
  * @property string $author_name
  */
 

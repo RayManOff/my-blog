@@ -18,16 +18,23 @@ abstract class Controller {
         $this->view = new View();
     }
 
+    /**
+     * TODO доделай метод с исключениями
+     *
+     */
+
     public function action($action) {
+
         $methodName = 'action' . $action;
-        //$this->beforeAction();
-        return $this->$methodName();
+        if(method_exists($this, $methodName)){
+            return $this->$methodName();
+        }
+
     }
 
     public function redirect($url)
     {
         header('location: ' . $url);
-        exit();
     }
 
     public function isPost(){

@@ -4,6 +4,11 @@ namespace App\Classes;
 
 use App\TMagic;
 
+
+/**
+ * Class Model
+ * @property integer $id
+ */
 abstract class Model {
 
     const TABLE = '';
@@ -110,14 +115,13 @@ abstract class Model {
 
         $params = [];
         foreach($this->data as $key => $value){
+
             if($key != 'id') {
                 continue;
             }
             $params[':'.$key] = $value;
         }
         $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=:id';
-        //var_dump($params);die;
-
         $db = DB::instance();
         $db->execute($sql, $params);
     }

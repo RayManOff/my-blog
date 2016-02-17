@@ -28,7 +28,7 @@
         </div>
     <?php endforeach; ?>
     <?php endif?>
-        <form class="form-horizontal" role="form" action="/Admin/Add" method="post">
+        <form class="form-horizontal" role="form" action="/Admin/Create" method="post">
         <div class="form-group">
             <label for="title" class="col-sm-2 control-label">Заголовок</label>
             <div class="col-sm-10">

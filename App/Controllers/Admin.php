@@ -16,20 +16,22 @@ class Admin extends Controller {
 
         $this->view->title = 'Админка';
         $this->view->news = \App\Models\News::findAll();
-        $this->view->display(__DIR__ . '/../Templates/News/Edit.php');
+        $this->view->display(__DIR__ . '/../Templates/News/Admin.php');
     }
+
     /**
      * Действие для добовления новости
      *
      */
-    protected function actionAdd ()
+    protected function actionCreate ()
     {
         if ($this->isPost()) {
             try {
                  $news = new News();
                  $news->fill($_POST);
                  $news->save();
-                 $this->redirect('/Admin');
+                 $this->redirect('/Admin/Index');
+                 exit;
              } catch (MultiException $error) {
                  $this->view->errors = $error;
              }
@@ -38,9 +40,7 @@ class Admin extends Controller {
              $this->view->errors = null;
          }
 
-         $this->view->display(__DIR__ . '/../Templates/News/Add.php');
-
-
+         $this->view->display(__DIR__ . '/../Templates/News/Create.php');
     }
 
     /**
@@ -50,16 +50,19 @@ class Admin extends Controller {
     {
         if($this->isPost()){
             try {
-                $article = \App\Models\News::findOneById($_GET['id']);
-                $article->checkData($_POST);
-                $article->fill($_POST);
-                $article->save();
-                $this->redirect('/Admin/Edit');
+                $news = \App\Models\News::findOneById($_GET['id']);
+                $news->fill($_POST);
+                $news->save();
+                $this->redirect('/Admin/Index');
+                exit();
             } catch (MultiException $error) {
-
+                $this->view->errors = $error;
             }
+        } else {
+            $this->view->news = \App\Models\News::findOneById($_GET['id']);
+            $this->view->errors = null;
         }
-
+        $this->view->display(__DIR__ . '/../Templates/News/Update.php');
 
     }
 
@@ -68,9 +71,10 @@ class Admin extends Controller {
      */
     protected function actionDelete (){
 
-        $article= \App\Models\News::findOneById($_GET['id']);
-        $article->delete();
-        $this->redirect('/Admin/Edit');
+        $news = \App\Models\News::findOneById($_GET['id']);
+        $news->delete();
+        $this->redirect('/Admin/Index');
+        exit;
     }
 
 }

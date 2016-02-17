@@ -9,7 +9,6 @@ use App\Classes\TCollection;
 
 
 /**
- * @property integer $id
  * @property string $title
  * @property string $text
  * @property string $author
@@ -24,7 +23,7 @@ class News extends Model
 
     const TABLE = 'News';
 
-    protected $required_prop = ['title', 'text', 'author'];
+    static $required_prop = ['title', 'text', 'author'];
 
     public function __set($k, $v)
     {
@@ -87,7 +86,7 @@ class News extends Model
 
             if('' !== $value){
 
-                if(in_array($prop, $this->required_prop)){
+                if(in_array($prop, self::$required_prop)){
                     $this->$prop = $value;
                 }
             } else {
@@ -103,7 +102,6 @@ class News extends Model
         }
 
         if(isset($error)){
-
             throw $error;
         }
 
