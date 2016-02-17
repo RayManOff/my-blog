@@ -4,8 +4,6 @@ namespace App\Models;
 use App\Classes\DB;
 use App\Classes\Model;
 use App\Classes\MultiException;
-use App\Classes\TCollection;
-
 
 
 /**
@@ -19,17 +17,13 @@ class News extends Model
             implements \ArrayAccess
 {
 
-    use TCollection;
-
     const TABLE = 'News';
 
     static $required_prop = ['title', 'text', 'author'];
 
     public function __set($k, $v)
     {
-
         if ('author' == $k) {
-
             $author = Author::findOneByColumn('author_name', $v);
             if (false !== $author) {
                 $this->data['author_id'] = $author->id;
@@ -39,7 +33,6 @@ class News extends Model
                 $author->save();
                 $this->data['author_id'] = $author->id;
             }
-
         } else {
 
             $this->data[$k] = $v;
@@ -48,7 +41,6 @@ class News extends Model
 
     public function __get($k)
     {
-
         if ('author' == $k) {
             if (!empty($this->data['author_id'])) {
                 return Author::findOneById($this->data['author_id']);
@@ -62,7 +54,6 @@ class News extends Model
 
     public function __isset($k)
     {
-
         if ('author' == $k) {
             return !empty($this->data['author_id']);
         } else {
@@ -85,7 +76,6 @@ class News extends Model
         foreach ($data as $prop => $value) {
 
             if('' !== $value){
-
                 if(in_array($prop, self::$required_prop)){
                     $this->$prop = $value;
                 }
@@ -100,11 +90,8 @@ class News extends Model
                 $error[] = new \Exception('Незаполненное поле '. $prop);
             }
         }
-
         if(isset($error)){
             throw $error;
         }
-
     }
-
 }

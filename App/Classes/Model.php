@@ -2,9 +2,6 @@
 
 namespace App\Classes;
 
-use App\TMagic;
-
-
 /**
  * Class Model
  * @property integer $id
@@ -13,7 +10,7 @@ abstract class Model {
 
     const TABLE = '';
 
-    use TMagic;
+    use TCollection;
 
     public static function findAll(){
 
@@ -52,7 +49,7 @@ abstract class Model {
 
     public function isNew()
     {
-        return empty($this->id);
+        return empty($this->data['id']);
     }
 
     protected function insert(){

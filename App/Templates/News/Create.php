@@ -21,7 +21,7 @@
 <body>
 <h1 class="text-center">Добавить новость</h1><br>
 <div class="container">
-    <?php if($errors !== null):?>
+    <?php if(isset($errors) && $errors !== null):?>
     <?php foreach ($errors as $error): ?>
         <div class="alert alert-danger">
             <?php echo $error->getMessage(); ?>

@@ -2,12 +2,10 @@
 
 namespace App\Classes;
 
-use App\TMagic;
-
 
 class View implements \Countable {
 
-    use TMagic;
+    use TCollection;
 
     public function render($template){
 

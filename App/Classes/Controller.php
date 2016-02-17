@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Gadel
- * Date: 12.02.2016
- * Time: 8:04
- */
 
 namespace App\Classes;
 
@@ -35,6 +29,7 @@ abstract class Controller {
     public function redirect($url)
     {
         header('location: ' . $url);
+        exit;
     }
 
     public function isPost(){

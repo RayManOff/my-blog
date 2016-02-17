@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Gadel
- * Date: 15.02.2016
- * Time: 22:37
- */
 
 namespace App\Classes;
 
@@ -13,6 +7,23 @@ trait TCollection
 {
 
     protected $data = [];
+
+
+    public function __set($k, $v) {
+
+        $this->data[$k] = $v;
+    }
+
+    public function __get($k) {
+
+        return $this->data[$k];
+    }
+
+    public function __isset($k) {
+
+        return empty($this->data[$k]);
+    }
+
 
     public function offsetExists($offset)
     {

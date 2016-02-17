@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-
 use App\Classes\Controller;
 use App\Classes\MultiException;
 use App\Models\News;
@@ -30,16 +29,13 @@ class Admin extends Controller {
                  $news = new News();
                  $news->fill($_POST);
                  $news->save();
-                 $this->redirect('/Admin/Index');
-                 exit;
+                 $this->redirect('/Admin');
              } catch (MultiException $error) {
                  $this->view->errors = $error;
              }
          } else {
-
              $this->view->errors = null;
          }
-
          $this->view->display(__DIR__ . '/../Templates/News/Create.php');
     }
 
@@ -54,7 +50,6 @@ class Admin extends Controller {
                 $news->fill($_POST);
                 $news->save();
                 $this->redirect('/Admin/Index');
-                exit();
             } catch (MultiException $error) {
                 $this->view->errors = $error;
             }
@@ -73,7 +68,7 @@ class Admin extends Controller {
 
         $news = \App\Models\News::findOneById($_GET['id']);
         $news->delete();
-        $this->redirect('/Admin/Index');
+        $this->redirect('/Admin');
         exit;
     }
 
