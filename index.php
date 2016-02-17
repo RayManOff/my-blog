@@ -14,7 +14,11 @@ $controllerName = '\App\\Controllers\\' . $ctr;
 try{
     $controller = new $controllerName;
     $controller->action($act);
+
 } catch (\App\Exceptions\DB $e) {
-     echo $e->getMessage();
+    $log = new \App\Classes\Log();
+    $log->fill($e);
+    $log->logRecord();
+
 }
 

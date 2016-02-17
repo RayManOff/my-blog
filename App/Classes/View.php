@@ -23,7 +23,6 @@ class View implements \Countable {
 
     public function display($template){
 
-
         echo $this->render($template);
 
     }

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Gadel
- * Date: 06.02.2016
- * Time: 23:31
- */
 
 namespace App\Classes;
 
@@ -25,7 +19,6 @@ class DB {
         } catch (\PDOException $e){
               throw new \App\Exceptions\DB('Ошибка при подключении к БД');
         }
-
     }
 
     public function execute($sql, $params = []){
@@ -56,3 +49,6 @@ class DB {
     }
 
 }
+
+
+
