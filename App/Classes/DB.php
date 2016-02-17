@@ -14,7 +14,7 @@ class DB {
     protected function __construct() {
 
         try{
-            $dsn = 'mysql:host=localhost;dbname=test';
+            $dsn = 'mysql:host=localhost;dbname=test11';
             $this->dbh = new \PDO($dsn, 'root', '');
         } catch (\PDOException $e){
               throw new \App\Exceptions\DB('Ошибка при подключении к БД');
