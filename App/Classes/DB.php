@@ -14,10 +14,10 @@ class DB {
     protected function __construct() {
 
         try{
-            $dsn = 'mysql:host=localhost;dbname=test11';
+            $dsn = 'mysql:host=localhost;dbname=test';
             $this->dbh = new \PDO($dsn, 'root', '');
         } catch (\PDOException $e){
-              throw new \App\Exceptions\DB('Ошибка при подключении к БД');
+              throw new \App\Exceptions\DB('Ошибка при подключении к базе данных');
         }
     }
 

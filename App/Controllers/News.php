@@ -4,6 +4,7 @@
 namespace App\Controllers;
 
 use App\Classes\Controller;
+use App\Exceptions\Exception404;
 
 class News extends Controller {
 
@@ -13,7 +14,6 @@ class News extends Controller {
      */
     protected function actionIndex(){
 
-        $this->view->title = 'Новости';
         $this->view->news = \App\Models\News::findAll();
         $this->view->display(__DIR__ . '/../Templates/News/All.php');
     }
@@ -24,9 +24,9 @@ class News extends Controller {
 
     protected function actionOne(){
 
-        $id = (int)$_GET['id'];
-        $this->view->title = 'Новости';
-        $this->view->article= \App\Models\News::findOneById($id);
+       if(!$this->view->article = \App\Models\News::findOneById($_GET['id'])) {
+           throw new Exception404('Новсть не найдена. Ошибка 404');
+        }
         $this->view->display(__DIR__ . '/../Templates/News/One.php');
     }
 

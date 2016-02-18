@@ -5,7 +5,7 @@ namespace App\Classes;
 
 class Logger {
 
-    const PATH = __DIR__ . '/../log.txt';
+    const PATH =  __DIR__ . '/../log.txt';
     protected $massage;
     protected $file;
     protected $line;
