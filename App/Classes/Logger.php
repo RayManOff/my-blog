@@ -20,11 +20,20 @@ class Logger {
 
     public function logRecord(){
 
-        file_put_contents(self::PATH, date('l jS \of F Y h:i:s A') . "\r\n", FILE_APPEND);
+        $res = fopen(self::PATH, 'a+');
+        fwrite($res, date('l jS \of F Y h:i:s A') . "\r\n");
+        foreach ($this as $k => $v) {
+            $str = $k . ' : ' . $v . "\r\n";
+            fwrite($res, $str);
+        }
+        fwrite($res, "\r\n" );
+        fclose($res);
+
+       /* file_put_contents(self::PATH, date('l jS \of F Y h:i:s A') . "\r\n", FILE_APPEND);
         foreach($this as $key=>$value) {
             $str = $key . '--' . $value . "\r\n";
             file_put_contents(self::PATH, $str, FILE_APPEND);
         }
-        file_put_contents(self::PATH, "\r\n", FILE_APPEND);
+        file_put_contents(self::PATH, "\r\n", FILE_APPEND);*/
     }
 }

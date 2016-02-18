@@ -14,12 +14,10 @@ $controllerName = '\App\\Controllers\\' . $ctr;
 try{
 
     $controller = new $controllerName;
-    if (!method_exists($controllerName, 'action' . $act)) {
-        throw new \App\Exceptions\Exception404('Страница не найдена. Ошибка 404');
-    }
     $controller->action($act);
 
 } catch (\App\Exceptions\DB $e) {
+
     $log = new \App\Classes\Logger($e);
     $log->logRecord();
     $view = new \App\Classes\View();

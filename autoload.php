@@ -2,6 +2,11 @@
 
 function __autoload($class) {
 
-    require __DIR__ . '/' . str_replace('\\', '/', $class) . '.php';
+    $path = __DIR__ . '/' . str_replace('\\', '/', $class) . '.php';
+    if(file_exists($path)){
+        require $path;
+    } else {
+        return false;
+    }
 
 }

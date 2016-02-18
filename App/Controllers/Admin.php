@@ -54,9 +54,9 @@ class Admin extends Controller {
                 $this->view->errors = $error;
             }
         } else {
-            $this->view->news = \App\Models\News::findOneById($_GET['id']);
             $this->view->errors = null;
         }
+        $this->view->news = \App\Models\News::findOneById($_GET['id']);
         $this->view->display(__DIR__ . '/../Templates/News/Update.php');
 
     }
@@ -69,7 +69,6 @@ class Admin extends Controller {
         $news = \App\Models\News::findOneById($_GET['id']);
         $news->delete();
         $this->redirect('/Admin');
-        exit;
     }
 
 }

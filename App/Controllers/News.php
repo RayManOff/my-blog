@@ -24,7 +24,7 @@ class News extends Controller {
 
     protected function actionOne(){
 
-       if(!$this->view->article = \App\Models\News::findOneById($_GET['id'])) {
+       if(false == $this->view->article = \App\Models\News::findOneById($_GET['id'])) {
            throw new Exception404('Новсть не найдена. Ошибка 404');
         }
         $this->view->display(__DIR__ . '/../Templates/News/One.php');

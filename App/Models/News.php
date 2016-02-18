@@ -18,8 +18,7 @@ class News extends Model
 {
 
     const TABLE = 'News';
-
-    static $required_prop = ['title', 'text', 'author'];
+    protected static $prop = ['title', 'text', 'author'];
 
     public function __set($k, $v)
     {
@@ -71,27 +70,5 @@ class News extends Model
         return ([] == $res) ? false : $res;
     }
 
-    public function fill(array $data)
-    {
-        foreach ($data as $prop => $value) {
 
-            if('' !== $value){
-                if(in_array($prop, self::$required_prop)){
-                    $this->$prop = $value;
-                }
-            } else {
-                /**
-                 * @var MultiException $error
-                 */
-                if(!isset($error)){
-                    $error = new MultiException();
-                }
-
-                $error[] = new \Exception('Незаполненное поле '. $prop);
-            }
-        }
-        if(isset($error)){
-            throw $error;
-        }
-    }
 }

@@ -9,6 +9,7 @@ namespace App\Classes;
 abstract class Model {
 
     const TABLE = '';
+    protected static $prop = [];
 
     use TCollection;
 
@@ -121,6 +122,30 @@ abstract class Model {
         $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=:id';
         $db = DB::instance();
         $db->execute($sql, $params);
+    }
+
+    public function fill(array $data)
+    {
+        foreach ($data as $prop => $value) {
+
+            if('' !== $value){
+                if(in_array($prop, static::$prop)){
+                    $this->$prop = $value;
+                }
+            } else {
+                /**
+                 * @var MultiException $error
+                 */
+                if(!isset($error)){
+                    $error = new MultiException();
+                }
+
+                $error[] = new \Exception('Незаполненное поле '. $prop);
+            }
+        }
+        if(isset($error)){
+            throw $error;
+        }
     }
 
 }
