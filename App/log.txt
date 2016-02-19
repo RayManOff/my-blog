@@ -1,0 +1,45 @@
+Friday 19th of February 2016 12:32:11 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Friday 19th of February 2016 12:40:57 AM
+massage : Новсть не найдена. Ошибка 404
+file : C:\OpenServer\domains\lesson5\App\Controllers\News.php
+line : 28
+
+Friday 19th of February 2016 12:42:44 AM
+massage : Новсть не найдена. Ошибка 404
+file : C:\OpenServer\domains\lesson5\App\Controllers\News.php
+line : 28
+
+Friday 19th of February 2016 10:45:49 AM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Friday 19th of February 2016 10:45:49 AM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Friday 19th of February 2016 10:45:55 AM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Friday 19th of February 2016 10:46:01 AM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Friday 19th of February 2016 10:46:04 AM
+massage : Новсть не найдена
+file : C:\OpenServer\domains\lesson5\App\Controllers\News.php
+line : 28
+
+Friday 19th of February 2016 10:46:04 AM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+

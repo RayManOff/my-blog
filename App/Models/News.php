@@ -3,8 +3,6 @@
 namespace App\Models;
 use App\Classes\DB;
 use App\Classes\Model;
-use App\Classes\MultiException;
-
 
 /**
  * @property string $title
