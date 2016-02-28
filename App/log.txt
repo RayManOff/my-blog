@@ -43,3 +43,213 @@ massage : Страница не найдена
 file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
 line : 26
 
+Thursday 25th of February 2016 08:49:07 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Thursday 25th of February 2016 08:49:13 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Thursday 25th of February 2016 08:49:14 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Thursday 25th of February 2016 08:49:24 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Thursday 25th of February 2016 08:49:27 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Thursday 25th of February 2016 08:49:31 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Thursday 25th of February 2016 11:41:29 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Saturday 27th of February 2016 01:09:31 AM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Saturday 27th of February 2016 01:09:47 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 01:10:37 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 01:10:39 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 01:10:59 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 01:13:56 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 01:15:45 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 01:37:27 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 09:34:42 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 11:12:14 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 11:12:47 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 11:15:44 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 11:20:23 AM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:19:48 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:22:53 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:25:13 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:26:22 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:28:15 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:28:35 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:28:36 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:29:15 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:30:21 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:32:33 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 20
+
+Saturday 27th of February 2016 12:36:31 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 26
+
+Saturday 27th of February 2016 12:48:01 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 21
+
+Saturday 27th of February 2016 12:48:28 PM
+massage : Новсть не найдена
+file : C:\OpenServer\domains\lesson5\App\Controllers\News.php
+line : 28
+
+Saturday 27th of February 2016 12:48:30 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 21
+
+Saturday 27th of February 2016 12:57:12 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 21
+
+Saturday 27th of February 2016 01:03:34 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 21
+
+Saturday 27th of February 2016 01:03:44 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 21
+
+Saturday 27th of February 2016 01:03:46 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 21
+
+Saturday 27th of February 2016 01:08:55 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 21
+
+Sunday 28th of February 2016 02:02:41 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 21
+
+Sunday 28th of February 2016 02:02:44 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 21
+
+Sunday 28th of February 2016 02:02:59 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 21
+

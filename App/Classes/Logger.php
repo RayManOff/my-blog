@@ -2,10 +2,12 @@
 
 namespace App\Classes;
 
+use App\Mail\Sender;
 
-class Logger {
+class Logger
+{
 
-    const PATH =  __DIR__ . '/../log.txt';
+    const PATH = __DIR__ . '/../log.txt';
     protected $massage;
     protected $file;
     protected $line;
@@ -18,7 +20,8 @@ class Logger {
         $this->line = $error->getLine();
     }
 
-    public function logRecord(){
+    public function logRecord()
+    {
 
         $res = fopen(self::PATH, 'a+');
         fwrite($res, date('l jS \of F Y h:i:s A') . "\r\n");
@@ -26,14 +29,21 @@ class Logger {
             $str = $k . ' : ' . $v . "\r\n";
             fwrite($res, $str);
         }
-        fwrite($res, "\r\n" );
+        fwrite($res, "\r\n");
         fclose($res);
 
-       /* file_put_contents(self::PATH, date('l jS \of F Y h:i:s A') . "\r\n", FILE_APPEND);
-        foreach($this as $key=>$value) {
-            $str = $key . '--' . $value . "\r\n";
-            file_put_contents(self::PATH, $str, FILE_APPEND);
-        }
-        file_put_contents(self::PATH, "\r\n", FILE_APPEND);*/
     }
+
+    public function sendMail()
+    {
+        $message = [];
+        $message['subject'] = 'error';
+        $message['body'] = $this->massage . ' '. $this->file . ' line:' . $this->line;
+        $recipient = 'ruslan8520@gmail.com';
+
+        Sender::send($message, $recipient);
+
+    }
+
+
 }

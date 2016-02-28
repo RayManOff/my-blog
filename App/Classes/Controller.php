@@ -14,19 +14,13 @@ abstract class Controller {
         $this->view = new View();
     }
 
-    /**
-     * TODO доделай метод с исключениями
-     *
-     */
-
     public function action($action) {
 
         $methodName = 'action' . $action;
-        if(!method_exists($this, $methodName)){
+        if(false == method_exists($this, $methodName)){
             throw  new Exception404('Страница не найдена', 404);
         }
         return $this->$methodName();
-
     }
 
     public function redirect($url)
