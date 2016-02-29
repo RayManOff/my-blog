@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,29 +19,33 @@
 </head>
 <body>
 <h1 class="text-center">Добавить новость</h1><br>
+
 <div class="container">
-    <?php if(isset($errors) && $errors !== null):?>
-    <?php foreach ($errors as $error): ?>
-        <div class="alert alert-danger">
-            <?php echo $error->getMessage(); ?>
-        </div>
-    <?php endforeach; ?>
-    <?php endif?>
-        <form class="form-horizontal" role="form" action="/Admin/Create" method="post">
+    <?php if (isset($errors) && $errors !== null): ?>
+        <?php foreach ($errors as $error): ?>
+            <div class="alert alert-danger">
+                <?php echo $error->getMessage(); ?>
+            </div>
+        <?php endforeach; ?>
+    <?php endif ?>
+    <form class="form-horizontal" role="form" action="/Admin/Create" method="post">
         <div class="form-group">
             <label for="title" class="col-sm-2 control-label">Заголовок</label>
+
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="title" name="title" placeholder="Заголовок">
             </div>
         </div>
         <div class="form-group">
             <label for="text" class="col-sm-2 control-label">Текст новости</label>
+
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="text" name="text" placeholder="Новость">
             </div>
         </div>
         <div class="form-group">
             <label for="author" class="col-sm-2 control-label">Автор</label>
+
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="author" name="author" placeholder="Автор">
             </div>

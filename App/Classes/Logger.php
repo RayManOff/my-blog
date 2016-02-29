@@ -36,14 +36,14 @@ class Logger
 
     public function sendMail()
     {
-        $message = [];
-        $message['subject'] = 'error';
-        $message['body'] = $this->massage . ' '. $this->file . ' line:' . $this->line;
+        $message = [
+            'subject' => 'error',
+            'body' => $this->massage . ' file: ' . $this->file . ' line: ' . $this->line
+        ];
         $recipient = 'ruslan8520@gmail.com';
 
         Sender::send($message, $recipient);
 
     }
-
 
 }

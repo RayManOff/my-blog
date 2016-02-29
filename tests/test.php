@@ -1,20 +1,10 @@
 <?php
 require __DIR__ . '/../autoload.php';
 
-$data = ['title'=> 'ffsdf', 'text'=>'adf'];
+$data = ['title' => 'ffsdf', 'text' => 'adf'];
 $news = new \App\Models\News();
 $news->fill($data);
 var_dump($news);
-
-
-
-
-
-
-
-
-
-
 
 
 

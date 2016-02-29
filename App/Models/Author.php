@@ -10,9 +10,9 @@ use App\Classes\TCollection;
  * Class Author
  * @property string $author_name
  */
-
 class Author extends Model
-            implements \ArrayAccess {
+    implements \ArrayAccess
+{
 
     use TCollection;
 

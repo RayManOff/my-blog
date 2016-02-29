@@ -7,5 +7,6 @@ function my_autoload($class)
         include $path;
     }
 }
+
 spl_autoload_register('my_autoload');
 include __DIR__ . '/vendor/autoload.php';

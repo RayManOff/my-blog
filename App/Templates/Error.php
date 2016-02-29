@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +19,7 @@
 </head>
 <body>
 <h1 class="text-center">Внимание, ошибка...</h1><br>
+
 <div class="container">
     <div class="alert alert-danger">
         <?php echo $error; ?>

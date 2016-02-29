@@ -253,3 +253,18 @@ massage : Страница не найдена
 file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
 line : 21
 
+Monday 29th of February 2016 05:18:26 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Monday 29th of February 2016 05:18:29 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Monday 29th of February 2016 05:18:56 PM
+massage : Ошибка при подключении к базе данных
+file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
+line : 21
+

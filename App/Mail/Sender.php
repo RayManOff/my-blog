@@ -17,6 +17,7 @@ class Sender
     protected $username = 'ruslan8520@gmail.com';
     protected $password = 'gadelraymanov';
 
+
     protected function __construct ()
     {
         $transport = \Swift_SmtpTransport::newInstance($this->transport, $this->port, $this->encryption)
@@ -26,7 +27,7 @@ class Sender
         $this->message = \Swift_Message::newInstance();
     }
 
-    public static function send(array $message, $recipient)
+    public static function send(array $message = [], $recipient)
     {
         $sender = new self();
         $sender->message->setFrom($sender->username);

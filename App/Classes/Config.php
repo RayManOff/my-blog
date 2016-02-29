@@ -5,13 +5,15 @@ namespace App\Classes;
 namespace App;
 
 
-class Config {
+class Config
+{
 
     use TSingleton;
 
     public $data;
 
-    protected function __construct() {
+    protected function __construct()
+    {
 
         $this->data['db'] = include __DIR__ . '/../dbconfig.php';
     }

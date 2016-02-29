@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\Classes\DB;
 use App\Classes\Model;
 
@@ -10,9 +11,8 @@ use App\Classes\Model;
  * @property string $author
  * @property integer $author_id
  */
-
 class News extends Model
-            implements \ArrayAccess
+    implements \ArrayAccess
 {
 
     const TABLE = 'News';

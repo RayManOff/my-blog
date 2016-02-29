@@ -2,7 +2,8 @@
 
 namespace App;
 
-interface IHasEmail {
+interface IHasEmail
+{
 
     public function getEmail();
 

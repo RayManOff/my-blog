@@ -18,25 +18,25 @@
     <![endif]-->
 </head>
 <body>
-    <div class="container">
-            <h1 class="text-center">Новости</h1>
-            <?php foreach($news as $article):?>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a href="/News/One?id=<?php echo $article['id'];?>"><?php echo $article['title']?></a>
-                    </div>
-                    <div class="panel-body"><?php echo $article['text']?></div>
-                    <div class="panel-footer">
-                        <b>Автор статьи:</b>
-                        <i><?php if(!empty($article->author)) {
-                                echo $article->author['author_name'];
-                            } else {
-                                echo 'Нет автора';
-                            };?></i>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-    </div>
+<div class="container">
+    <h1 class="text-center">Новости</h1>
+    <?php foreach ($news as $article): ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="/News/One?id=<?php echo $article['id']; ?>"><?php echo $article['title'] ?></a>
+            </div>
+            <div class="panel-body"><?php echo $article['text'] ?></div>
+            <div class="panel-footer">
+                <b>Автор статьи:</b>
+                <i><?php if (!empty($article->author)) {
+                        echo $article->author['author_name'];
+                    } else {
+                        echo 'Нет автора';
+                    }; ?></i>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

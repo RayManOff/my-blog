@@ -9,17 +9,20 @@ trait TCollection
     protected $data = [];
 
 
-    public function __set($k, $v) {
+    public function __set($k, $v)
+    {
 
         $this->data[$k] = $v;
     }
 
-    public function __get($k) {
+    public function __get($k)
+    {
 
         return $this->data[$k];
     }
 
-    public function __isset($k) {
+    public function __isset($k)
+    {
 
         return empty($this->data[$k]);
     }
@@ -37,8 +40,8 @@ trait TCollection
 
     public function offsetSet($offset, $value)
     {
-        if('' == $offset){
-            $this->data[] =$value;
+        if ('' == $offset) {
+            $this->data[] = $value;
         } else {
             $this->data[$offset] = $value;
         }
@@ -71,7 +74,7 @@ trait TCollection
 
     public function valid()
     {
-        return  null !== key($this->data) ;
+        return null !== key($this->data);
     }
 
 

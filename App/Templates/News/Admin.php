@@ -22,29 +22,29 @@
 <div class="container">
     <div class="container">
         <h1 class="text-center">Админка</h1>
-        <?php foreach($news as $article):?>
+        <?php foreach ($news as $article): ?>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   <?php echo $article['title']?>
+                    <?php echo $article['title'] ?>
                 </div>
-                <div class="panel-body"><?php echo $article['text']?></div>
+                <div class="panel-body"><?php echo $article['text'] ?></div>
                 <div class="panel-footer">
                     <b>Автор статьи:</b>
-                    <i><?php if(!empty($article->author)) {
+                    <i><?php if (!empty($article->author)) {
                             echo $article->author['author_name'];
                         } else {
                             echo 'Нет автора';
-                        };?></i>
+                        }; ?></i>
                 </div>
-                <a href="/Admin/Delete?id=<?php echo $article['id'];?>" class="btn btn-default" >Удалить новость</a>
-                <a href="/Admin/Update?id=<?php echo $article['id'];?>" class="btn btn-default">Редактировать</a>
+                <a href="/Admin/Delete?id=<?php echo $article['id']; ?>" class="btn btn-default">Удалить новость</a>
+                <a href="/Admin/Update?id=<?php echo $article['id']; ?>" class="btn btn-default">Редактировать</a>
             </div>
         <?php endforeach; ?>
-    <a href="/Admin/Create" class="btn btn-default">Добавить новость</a>
-</div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+        <a href="/Admin/Create" class="btn btn-default">Добавить новость</a>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

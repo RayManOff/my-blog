@@ -3,15 +3,17 @@
 namespace App\Classes;
 
 
-class View implements \Countable {
+class View implements \Countable
+{
 
     use TCollection;
 
-    public function render($template){
+    public function render($template)
+    {
 
         ob_start();
 
-        foreach($this->data as $prop => $value){
+        foreach ($this->data as $prop => $value) {
             $$prop = $value;
         }
 
@@ -21,7 +23,8 @@ class View implements \Countable {
         return $content;
     }
 
-    public function display($template){
+    public function display($template)
+    {
 
         echo $this->render($template);
 
