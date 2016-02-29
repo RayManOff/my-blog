@@ -14,7 +14,7 @@ class Sender
     protected $transport = 'smtp.gmail.com';
     protected $port = 465;
     protected $encryption = 'ssl';
-    protected $username = 'my.mail@gmail.com';
+    protected $username = 'my.mail@mail.com';
     protected $password = '*******';
 
 
