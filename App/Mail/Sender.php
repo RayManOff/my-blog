@@ -14,8 +14,8 @@ class Sender
     protected $transport = 'smtp.gmail.com';
     protected $port = 465;
     protected $encryption = 'ssl';
-    protected $username = 'ruslan8520@gmail.com';
-    protected $password = 'gadelraymanov';
+    protected $username = 'my.mail@gmail.com';
+    protected $password = '*******';
 
 
     protected function __construct ()
