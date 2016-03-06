@@ -16,11 +16,29 @@ class News extends Model
 {
 
     const TABLE = 'News';
-    protected static $prop = ['title', 'text', 'author'];
 
-    public function __set($k, $v)
+    public function validateTitle($v){
+
+        if(empty($v)){
+            throw new \Exception('Пустой заголовок');
+        }
+        if(strlen($v) > 20){
+            throw new \Exception('Слишком длинный заголовок');
+        }
+        return true;
+    }
+
+    public function validateText($v){
+
+        if(empty($v)){
+            throw new \Exception('А где же текст');
+        }
+        return true;
+    }
+
+    public function setAuthor($v)
     {
-        if ('author' == $k) {
+        if (!empty($v)) {
             $author = Author::findOneByColumn('author_name', $v);
             if (false !== $author) {
                 $this->data['author_id'] = $author->id;
@@ -31,21 +49,16 @@ class News extends Model
                 $this->data['author_id'] = $author->id;
             }
         } else {
-
-            $this->data[$k] = $v;
+            throw new \Exception('Забыли указать автора');
         }
     }
 
-    public function __get($k)
+    public function getAuthor()
     {
-        if ('author' == $k) {
-            if (!empty($this->data['author_id'])) {
-                return Author::findOneById($this->data['author_id']);
-            } else {
-                return false;
-            }
+        if (!empty($this->data['author_id'])) {
+            return Author::findOneById($this->data['author_id']);
         } else {
-            return $this->data[$k];
+            return false;
         }
     }
 
@@ -57,7 +70,6 @@ class News extends Model
             return !empty($this->data[$k]);
         }
     }
-
 
     public static function findLastNews(int $n)
     {

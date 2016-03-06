@@ -19,15 +19,15 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="text-center"><?php echo $article['title'] ?></h1>
+    <h1 class="text-center"><?php echo $article->title ?></h1>
 
     <div class="panel panel-default">
-        <div class="panel-heading"><?php echo $article['text'] ?></div>
+        <div class="panel-heading"><?php echo $article->text ?></div>
         <div class="panel-footer">
             <b>Автор статьи:</b>
             <i>
                 <?php if (!empty($article->author)) {
-                    echo $article->author['author_name'];
+                    echo $article->author->author_name;
                 } else {
                     echo 'Нет автора';
                 }

@@ -268,3 +268,188 @@ massage : Ошибка при подключении к базе данных
 file : C:\OpenServer\domains\lesson5\App\Classes\DB.php
 line : 21
 
+Sunday 6th of March 2016 04:44:35 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 04:44:38 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 04:44:42 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 04:44:48 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 04:44:50 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 04:45:24 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:23:15 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:24:34 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:24:37 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:26:39 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:26:41 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:32:45 PM
+massage : Новость не найдена
+file : C:\OpenServer\domains\lesson5\App\Controllers\News.php
+line : 26
+
+Sunday 6th of March 2016 05:32:46 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:32:50 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:34:16 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:36:21 PM
+massage : Новость не найдена
+file : C:\OpenServer\domains\lesson5\App\Controllers\News.php
+line : 26
+
+Sunday 6th of March 2016 05:36:21 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:36:26 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:38:34 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:45:31 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:45:37 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:49:50 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:49:52 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:49:55 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:49:58 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:52:44 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:52:50 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:53:14 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:53:17 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:57:05 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:57:09 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:59:46 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 05:59:49 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 06:03:39 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 06:03:42 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 06:05:25 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+
+Sunday 6th of March 2016 06:05:40 PM
+massage : Страница не найдена
+file : C:\OpenServer\domains\lesson5\App\Classes\Controller.php
+line : 24
+

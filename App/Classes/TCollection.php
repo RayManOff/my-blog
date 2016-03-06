@@ -8,22 +8,54 @@ trait TCollection
 
     protected $data = [];
 
+    public function innerSet($k, $v)
+    {
+
+        $setMethod = 'set' . ucfirst($k);
+
+        if (method_exists($this, $setMethod)) {
+            $this->$setMethod($v);
+            return;
+        }
+
+       $validateMethod = 'validate' . ucfirst($k);
+        if (method_exists($this, $validateMethod)) {
+            $validateResult = $this->$validateMethod($v);
+            if($validateResult){
+                $this->data[$k] = $v;
+                return;
+            }
+        }
+        $this->data[$k] = $v;
+    }
+
+    public function innerGet($k)
+    {
+        $getMethod = 'get' . ucfirst($k);
+        if (method_exists($this, $getMethod)) {
+            return $this->$getMethod($k = '');
+        }
+        return $this->data[$k];
+    }
+
+
+    public function isEmpty()
+    {
+        return empty($this->data);
+    }
 
     public function __set($k, $v)
     {
-
-        $this->data[$k] = $v;
+        $this->innerSet($k, $v);
     }
 
     public function __get($k)
     {
-
-        return $this->data[$k];
+        return $this->innerGet($k);
     }
 
     public function __isset($k)
     {
-
         return empty($this->data[$k]);
     }
 
@@ -35,7 +67,7 @@ trait TCollection
 
     public function offsetGet($offset)
     {
-        return $this->data[$offset];
+        return $this->innerGet($offset);
     }
 
     public function offsetSet($offset, $value)
@@ -45,7 +77,6 @@ trait TCollection
         } else {
             $this->data[$offset] = $value;
         }
-
     }
 
     public function offsetUnset($offset)

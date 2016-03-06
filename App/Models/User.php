@@ -10,7 +10,6 @@ class User extends Model implements IHasEmail
 
     const TABLE = 'users';
 
-
     public function getEmail()
     {
         return $this->email;

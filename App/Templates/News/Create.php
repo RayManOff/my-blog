@@ -38,9 +38,8 @@
         </div>
         <div class="form-group">
             <label for="text" class="col-sm-2 control-label">Текст новости</label>
-
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="text" name="text" placeholder="Новость">
+                <textarea class="form-control" id="text" name="text" placeholder="Новость"></textarea>
             </div>
         </div>
         <div class="form-group">

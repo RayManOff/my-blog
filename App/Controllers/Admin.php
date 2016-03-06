@@ -8,7 +8,6 @@ use App\Models\News;
 
 class Admin extends Controller
 {
-
     /**
      * Выводит все новости с возможеостью редактирования
      */
@@ -17,6 +16,7 @@ class Admin extends Controller
 
         $this->view->title = 'Админка';
         $this->view->news = \App\Models\News::findAll();
+        //var_dump(\App\Models\News::findAll());die;
         $this->view->display(__DIR__ . '/../Templates/News/Admin.php');
     }
 

@@ -10,7 +10,6 @@ abstract class Model
 {
 
     const TABLE = '';
-    protected static $prop = [];
 
     use TCollection;
 
@@ -132,28 +131,24 @@ abstract class Model
         $db->execute($sql, $params);
     }
 
+
     public function fill(array $data)
     {
-        foreach ($data as $prop => $value) {
-
-            if ('' !== $value) {
-                if (in_array($prop, static::$prop)) {
-                    $this->$prop = $value;
-                }
-            } else {
-                /**
-                 * @var MultiException $error
-                 */
-                if (!isset($error)) {
-                    $error = new MultiException();
-                }
-
-                $error[] = new \Exception('Незаполненное поле ' . $prop);
+        $errors = new MultiException();
+        foreach ($data as $key => $value) {
+            try {
+                $this->$key = $value;
+            } catch (\Exception $e) {
+                $errors[] = $e;
             }
         }
-        if (isset($error)) {
-            throw $error;
+        /**
+         * @var MultiException $errors
+         */
+        if (!$errors->isEmpty()) {
+            throw $errors;
         }
+
     }
 
 }

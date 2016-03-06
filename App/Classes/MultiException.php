@@ -7,4 +7,5 @@ class MultiException
 {
     use TCollection;
 
+
 }

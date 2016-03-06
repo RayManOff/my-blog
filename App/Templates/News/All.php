@@ -23,13 +23,13 @@
     <?php foreach ($news as $article): ?>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <a href="/News/One?id=<?php echo $article['id']; ?>"><?php echo $article['title'] ?></a>
+                <a href="/News/One?id=<?php echo $article->id; ?>"><?php echo $article->title ?></a>
             </div>
-            <div class="panel-body"><?php echo $article['text'] ?></div>
+            <div class="panel-body"><?php echo $article->text ?></div>
             <div class="panel-footer">
                 <b>Автор статьи:</b>
                 <i><?php if (!empty($article->author)) {
-                        echo $article->author['author_name'];
+                        echo $article->author->author_name;
                     } else {
                         echo 'Нет автора';
                     }; ?></i>
