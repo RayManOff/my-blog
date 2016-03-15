@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\AdminDataTable;
 use App\Classes\Controller;
 use App\Classes\MultiException;
 use App\Models\News;
@@ -13,11 +14,26 @@ class Admin extends Controller
      */
     protected function actionIndex()
     {
-
         $this->view->title = 'Админка';
         $this->view->news = \App\Models\News::findAll();
-        //var_dump(\App\Models\News::findAll());die;
         $this->view->display(__DIR__ . '/../Templates/News/Admin.php');
+    }
+
+    protected function actionAdminTable()
+    {
+        $admin = new AdminDataTable(\App\Models\News::findAllWithQueryEach(), [
+                function ($model) {
+                    return $model->title;
+                },
+                function ($model) {
+                    return $model->text;
+                },
+                /*function ($model) {
+                    return $model->author;
+                },*/
+            ]
+        );
+        $admin->render(__DIR__ . '/../Templates/News/AdminTable.php');
     }
 
     /**

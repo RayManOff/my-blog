@@ -17,12 +17,12 @@ abstract class Model
         $sql = 'SELECT * FROM ' . static::TABLE;
         $db = DB::instance();
         $db->setClass(static::class);
-        $res = $db->queryEach($sql);
+        $res = $db->query($sql);
         return $res;
 
     }
 
-    public function findAllWithQueryEach()
+    public static function findAllWithQueryEach()
     {
         $db = DB::instance();
         $db->setClass(static::class);
