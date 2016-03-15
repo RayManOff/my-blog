@@ -22,11 +22,12 @@ abstract class Model
 
     }
 
-    public static function findAllWithQueryEach()
+    public static function findAllWithGenerator()
     {
+        $sql = 'SELECT * FROM ' . static::TABLE;
         $db = DB::instance();
         $db->setClass(static::class);
-        return $db->queryEach('SELECT * FROM ' . static::TABLE);
+        return $db->queryEach($sql);
     }
 
     public static function findOneById(int $id)

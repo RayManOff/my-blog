@@ -21,7 +21,7 @@ class Admin extends Controller
 
     protected function actionAdminTable()
     {
-        $admin = new AdminDataTable(\App\Models\News::findAllWithQueryEach(), [
+        $admin = new AdminDataTable(\App\Models\News::findAllWithGenerator(), [
                 function ($model) {
                     return $model->title;
                 },
