@@ -5,7 +5,6 @@ namespace App\Models;
 use App\Classes\Model;
 use App\Classes\TCollection;
 
-
 /**
  * Class Author
  * @property string $author_name

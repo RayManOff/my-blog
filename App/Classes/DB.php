@@ -31,7 +31,6 @@ class DB
 
     public function query($sql, $params = [])
     {
-
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
         $res = $sth->fetchAll(\PDO::FETCH_CLASS, $this->class);
@@ -42,9 +41,18 @@ class DB
         }
     }
 
+    public function queryEach($sql, $params = [])
+    {
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute($params);
+        $sth->setFetchMode(\PDO::FETCH_CLASS, $this->class);
+        while($res = $sth->fetch()){
+            yield $res;
+        }
+    }
+
     public function setClass($class)
     {
-
         $this->class = $class;
     }
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Classes\DB;
 use App\Classes\Model;
+use JsonSchema\Validator;
 
 /**
  * @property string $title
@@ -12,7 +13,7 @@ use App\Classes\Model;
  * @property integer $author_id
  */
 class News extends Model
-    implements \ArrayAccess
+      implements \ArrayAccess
 {
 
     const TABLE = 'News';
@@ -56,19 +57,16 @@ class News extends Model
     public function getAuthor()
     {
         if (!empty($this->data['author_id'])) {
+
             return Author::findOneById($this->data['author_id']);
         } else {
             return false;
         }
     }
 
-    public function __isset($k)
+    public function issetAuthor()
     {
-        if ('author' == $k) {
-            return !empty($this->data['author_id']);
-        } else {
-            return !empty($this->data[$k]);
-        }
+        return !empty($this->data['author_id']);
     }
 
     public static function findLastNews(int $n)

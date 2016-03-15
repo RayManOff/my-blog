@@ -10,7 +10,6 @@ trait TCollection
 
     public function innerSet($k, $v)
     {
-
         $setMethod = 'set' . ucfirst($k);
 
         if (method_exists($this, $setMethod)) {
@@ -38,6 +37,13 @@ trait TCollection
         return $this->data[$k];
     }
 
+    public function innerIsset($k){
+        $issetMethod = 'isset' . ucfirst($k);
+        if(method_exists($this, $issetMethod)){
+            return $this->$issetMethod($k);
+        }
+        return isset($this->data[$k]);
+    }
 
     public function isEmpty()
     {
@@ -56,9 +62,9 @@ trait TCollection
 
     public function __isset($k)
     {
-        return empty($this->data[$k]);
+        return $this->innerIsset($k);
+        //return empty($this->data[$k]);
     }
-
 
     public function offsetExists($offset)
     {
@@ -84,30 +90,25 @@ trait TCollection
         unset($this->data[$offset]);
     }
 
-
     public function current()
     {
         return current($this->data);
     }
-
 
     public function next()
     {
         return next($this->data);
     }
 
-
     public function key()
     {
         return key($this->data);
     }
 
-
     public function valid()
     {
         return null !== key($this->data);
     }
-
 
     public function rewind()
     {

@@ -1,11 +1,55 @@
 <?php
 require __DIR__ . '/../autoload.php';
 
+$news = \App\Models\News::findAll();
+foreach($news as $article){
+    var_dump($article);
+}
+
+
+
+//function getFilter($type){
+//    switch ($type){
+//        case 'email' :
+//            return function ($email){
+//                return str_replace(' ', '', $email);
+//            };
+//    }
+//}
+//$filter = getFilter('email');
+//echo $filter('asdas asdasd  asd' );
+//function generete(){
+//    for($x = 1; $x < 10000; $x++){
+//        yield $x;
+//    }
+//}
+//
+//foreach(generete() as $val){
+//    echo $val;
+//}
+
+//
+//function sum(... $nums){
+//
+//    return array_sum($nums);
+//}
+//
+//echo sum(1, 2, 3);
+
+
+//function sum($a, $b, $c){
+//    return $a+$b+$c;
+//}
+//$array = [1, 2, 4];
+//echo sum(...$array);
+
+
+/*
 $data = ['title' => 'ffsdf', 'text' => 'adf'];
 $news = new \App\Models\News();
 $news->fill($data);
 var_dump($news);
-
+*/
 
 
 /*

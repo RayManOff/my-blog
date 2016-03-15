@@ -8,24 +8,29 @@ namespace App\Classes;
  */
 abstract class Model
 {
-
     const TABLE = '';
 
     use TCollection;
 
     public static function findAll()
     {
-
         $sql = 'SELECT * FROM ' . static::TABLE;
         $db = DB::instance();
         $db->setClass(static::class);
-        $res = $db->query($sql);
+        $res = $db->queryEach($sql);
         return $res;
+
+    }
+
+    public function findAllWithQueryEach()
+    {
+        $db = DB::instance();
+        $db->setClass(static::class);
+        return $db->queryEach('SELECT * FROM ' . static::TABLE);
     }
 
     public static function findOneById(int $id)
     {
-
         $sql = 'SELECT * FROM ' . static::TABLE . ' WHERE id=:id';
         $db = DB::instance();
         $db->setClass(static::class);
@@ -74,7 +79,6 @@ abstract class Model
         $sql = 'INSERT INTO ' . static::TABLE . ' (' . implode(', ', $columns) . ')' .
             ' VALUES ' . '(' . implode(', ', array_keys($params)) . ')';
 
-        //var_dump($sql);die;
 
         $db = DB::instance();
 
@@ -117,7 +121,6 @@ abstract class Model
 
     public function delete()
     {
-
         $params = [];
         foreach ($this->data as $key => $value) {
 
