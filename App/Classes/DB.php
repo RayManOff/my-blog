@@ -16,7 +16,7 @@ class DB
 
         try {
             $dsn = 'mysql:host=localhost;dbname=test';
-            $this->dbh = new \PDO($dsn, 'root', '');
+            $this->dbh = new \PDO($dsn, 'root', '8520');
         } catch (\PDOException $e) {
             throw new \App\Exceptions\DB('Ошибка при подключении к базе данных');
         }
@@ -24,7 +24,6 @@ class DB
 
     public function execute($sql, $params = [])
     {
-
         $sth = $this->dbh->prepare($sql);
         return $sth->execute($params);
     }
@@ -40,17 +39,7 @@ class DB
             return [];
         }
     }
-
-    public function queryEach($sql, $params = [])
-    {
-        $sth = $this->dbh->prepare($sql);
-        $sth->execute($params);
-        $sth->setFetchMode(\PDO::FETCH_CLASS, $this->class);
-        while($res = $sth->fetch()){
-            yield $res;
-        }
-    }
-
+    
     public function setClass($class)
     {
         $this->class = $class;

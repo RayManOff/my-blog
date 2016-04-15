@@ -75,12 +75,10 @@ abstract class Model
             $columns[] = $key;
             $params[':' . $key] = $value;
         }
-        //var_dump($params);die;
 
         $sql = 'INSERT INTO ' . static::TABLE . ' (' . implode(', ', $columns) . ')' .
             ' VALUES ' . '(' . implode(', ', array_keys($params)) . ')';
-
-
+        
         $db = DB::instance();
 
         $res = $db->execute($sql, $params);

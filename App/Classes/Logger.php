@@ -2,8 +2,6 @@
 
 namespace App\Classes;
 
-use App\Mail\Sender;
-
 class Logger
 {
 
@@ -33,17 +31,4 @@ class Logger
         fclose($res);
 
     }
-
-    public function sendMail()
-    {
-        $message = [
-            'subject' => 'error',
-            'body' => $this->massage . ' file: ' . $this->file . ' line: ' . $this->line
-        ];
-        $recipient = 'ruslan8520@gmail.com';
-
-        Sender::send($message, $recipient);
-
-    }
-
 }

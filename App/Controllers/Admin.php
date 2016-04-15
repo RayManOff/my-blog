@@ -14,9 +14,12 @@ class Admin extends Controller
      */
     protected function actionIndex()
     {
-        $this->view->title = 'Админка';
-        $this->view->news = \App\Models\News::findAll();
-        $this->view->display(__DIR__ . '/../Templates/News/Admin.php');
+        $news = new News();
+        $news->title = 123;
+        var_dump($news-> save());
+//        $this->view->title = 'Админка';
+//        $this->view->news = \App\Models\News::findAll();
+//        $this->view->display(__DIR__ . '/../Templates/News/Admin.php');
     }
 
     protected function actionAdminTable()

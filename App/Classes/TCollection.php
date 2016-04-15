@@ -63,7 +63,6 @@ trait TCollection
     public function __isset($k)
     {
         return $this->innerIsset($k);
-        //return empty($this->data[$k]);
     }
 
     public function offsetExists($offset)
