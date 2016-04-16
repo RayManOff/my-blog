@@ -15,7 +15,7 @@ class Config
     protected function __construct()
     {
 
-        $this->data['db'] = include __DIR__ . '/../dbconfig.php';
+        $this->data['db'] = include __DIR__ . '/../config.php';
     }
 
 }

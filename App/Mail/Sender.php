@@ -4,50 +4,49 @@ namespace App\Mail;
 
 
 class Sender
+    extends \PHPMailer
 {
-
-    public $message;
-    public $recipient;
-
-    protected $mailer;
-
-    protected $transport = 'smtp.gmail.com';
-    protected $port = 465;
-    protected $encryption = 'ssl';
-    protected $username = 'my.mail@mail.com';
-    protected $password = '*******';
-
-
-    protected function __construct ()
+    protected function getConfig()
     {
-        $transport = \Swift_SmtpTransport::newInstance($this->transport, $this->port, $this->encryption)
-            ->setUsername($this->username)
-            ->setPassword($this->password);
-        $this->mailer = \Swift_Mailer::newInstance($transport);
-        $this->message = \Swift_Message::newInstance();
+        $config = include __DIR__ . '/../config.php';
+        return $config['mail'];
     }
 
-    public static function send(array $message = [], $recipient)
+    public function __construct($exceptions = false)
     {
-        $sender = new self();
-        $sender->message->setFrom($sender->username);
-        $sender->message->setTo($recipient);
-        $sender->message->setSubject($message['subject']);
-        $sender->message->setBody($message['body']);
-        $sender->mailer->send($sender->message);
+        parent::__construct($exceptions);
+        $config = $this->getConfig();
+        $this->CharSet = 'utf-8';
+        if ('smtp' == $config['method']) {
+            $this->isSMTP();
+            $this->Host = $config['host'];
+            if (!empty($config['auth'])) {
+                $this->SMTPAuth = true;
+                $this->Username = $config['auth']['username'];
+                $this->Password = $config['auth']['password'];
+                $this->setFrom($config['auth']['username'], $config['sender']);
+                $this->addReplyTo($config['auth']['username'], $config['sender']);
+            }
+            $this->Port = $config['port'];
+            $this->SMTPSecure = !empty($config['secure']) ? $config['secure'] : '';
+        }
     }
+
+    public function sendMail($email, $theme, $message)
+    {
+        if (is_array($email)) {
+            $this->email = $email[0];
+            $this->addAddress($email[0], $email[1]);
+        } else {
+            $this->email = $email;
+            $this->addAddress($email, 'recipient');
+        }
+
+        $this->theme = $theme;
+        $this->Subject = $theme;
+        $this->answer = $message;
+        $this->msgHTML($message);
+        return $this->send();
+    }
+
 }
-
-/*
-$transport = \Swift_SmtpTransport::newInstance('Smtp.gmail.com', 465, 'ssl')
-    ->setUsername("ruslan8520@gmail.com")
-    ->setPassword("***");
-//var_dump($transport);die;
-
-$mailer = Swift_Mailer::newInstance($transport);
-$message = Swift_Message::newInstance()
-    ->setFrom('ruslan8520@gmail.com')
-    ->setTo('ruslan8520@gmail.com')
-    ->setBody("<h1>Welcome</h1>", 'text/html');
-$mailer->send($message);
-*/

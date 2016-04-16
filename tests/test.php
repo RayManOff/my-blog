@@ -1,5 +1,5 @@
 <?php
 require __DIR__ . '/../autoload.php';
 
-$act = new \App\Controllers\Admin();
-$act->action('index');
+$mail = new \App\Mail\Sender();
+$mail->sendMail('ruslan8520@gmail.com', 'test', 'Hello');
