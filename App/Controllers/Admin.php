@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
-use App\AdminDataTable;
 use App\Classes\Controller;
 use App\Classes\MultiException;
+use App\Http\Uploader;
 use App\Models\News;
 
 class Admin extends Controller
@@ -14,31 +14,11 @@ class Admin extends Controller
      */
     protected function actionIndex()
     {
-        $news = new News();
-        $news->title = 123;
-        var_dump($news-> save());
-//        $this->view->title = 'Админка';
-//        $this->view->news = \App\Models\News::findAll();
-//        $this->view->display(__DIR__ . '/../Templates/News/Admin.php');
+        $this->view->title = 'Админка';
+        $this->view->news = \App\Models\News::findAll();
+        $this->view->display(__DIR__ . '/../Templates/News/Admin.php');
     }
-
-    protected function actionAdminTable()
-    {
-        $admin = new AdminDataTable(\App\Models\News::findAllWithGenerator(), [
-                function ($model) {
-                    return $model->title;
-                },
-                function ($model) {
-                    return $model->text;
-                },
-                /*function ($model) {
-                    return $model->author;
-                },*/
-            ]
-        );
-        $admin->render(__DIR__ . '/../Templates/News/AdminTable.php');
-    }
-
+    
     /**
      * Действие для добовления новости
      *
@@ -58,6 +38,24 @@ class Admin extends Controller
             $this->view->errors = null;
         }
         $this->view->display(__DIR__ . '/../Templates/News/Create.php');
+    }
+
+    protected function actionUploadFile(){
+        if ($this->isPost()) {
+            try{
+                $file = new Uploader();
+                $file->setUploadsDir('/home/rayman/domains/my-blog/App/file/');
+                $file->format = [
+                    'jpg' => 'image/jpeg',
+                    'png' => 'image/png',
+                    'gif' => 'image/gif'];
+                
+                $file->UploadFile();
+            } catch (\Exception $e){
+                $this->view->error = $e;
+            }
+        }
+        $this->view->display(__DIR__ . '/../Templates/Form.php');
     }
 
     /**

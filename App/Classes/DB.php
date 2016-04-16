@@ -10,13 +10,21 @@ class DB
 
     protected $dbh;
     protected $class;
+    
+    
+    public function getConfig()
+    {
+        $config = include __DIR__ .'/../config.php';
+        return $config['db'];
+    }
 
     protected function __construct()
     {
-
+        $config = $this->getConfig();
+        $dsn = "{$config['driver']}:host={$config['host']};dbname={$config['dbname']}";
+        
         try {
-            $dsn = 'mysql:host=localhost;dbname=test';
-            $this->dbh = new \PDO($dsn, 'root', '8520');
+            $this->dbh = new \PDO($dsn, $config['user'], $config['password']);
         } catch (\PDOException $e) {
             throw new \App\Exceptions\DB('Ошибка при подключении к базе данных');
         }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Classes\DB;
 use App\Classes\Model;
-use JsonSchema\Validator;
+
 
 /**
  * @property string $title
@@ -16,7 +16,7 @@ class News extends Model
       implements \ArrayAccess
 {
 
-    const TABLE = 'News';
+    const TABLE = 'news';
 
     public function validateTitle($v){
 

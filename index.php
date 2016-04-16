@@ -20,7 +20,6 @@ try {
 
     $log = new \App\Classes\Logger($e);
     $log->logRecord();
-    $log->sendMail();
     $view = new \App\Classes\View();
     $view->error = $e->getMessage();
     $view->display(__DIR__ . '/App/Templates/Error.php');

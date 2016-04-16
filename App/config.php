@@ -1,13 +1,15 @@
 <?php
 
 return [
+
     'db' => [
-        'host'    =>'localhost',
-        'dbname'  =>'test',
-        'username'=>'root',
-        'password'=>''],
-    
-    
+        'driver' => 'mysql',
+        'host' => '127.0.0.1',
+        'dbname' => 'test',
+        'user' => 'root',
+        'password' => '8520',
+    ],
+
     'mail' => [
         'method' => 'smtp',
         'host' => 'smtp.gmail.com',
@@ -18,5 +20,10 @@ return [
             'password' => ''
         ],
         'sender' => 'admin'
+    ],
+    
+    'file' => [
+        'uploads_dir' => '/home/rayman/domains/my-blog/App/file/'
     ]
+    
 ];
