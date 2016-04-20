@@ -28,7 +28,7 @@
         </div>
     <?php endif; ?>
 
-    <form class="form-horizontal" role="form" action="/Admin/UploadFile" method="post" enctype="multipart/form-data">
+    <form class="form-horizontal" role="form" action="/Admin/UploadImage" method="post" enctype="multipart/form-data">
 
         <div class="form-group">
             <label for="file" class="col-sm-2 control-label">Файл</label>

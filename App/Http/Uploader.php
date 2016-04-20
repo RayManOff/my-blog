@@ -2,13 +2,14 @@
 
 namespace App\Http;
 
+use App\Exceptions\UploaderException;
+
 class Uploader{
 
     protected $uploads_dir;
-    
     public $format = [];
 
-    public function __construct(array $config = '')
+    public function __construct($config = '')
     {
         if($config == ''){
             $conf = $this->getConfig();
@@ -47,12 +48,12 @@ class Uploader{
             case UPLOAD_ERR_OK:
                 break;
             case UPLOAD_ERR_NO_FILE:
-                throw new \Exception('Файл не отправлен');
+                throw new UploaderException('Файл не отправлен');
             case UPLOAD_ERR_INI_SIZE:
             case UPLOAD_ERR_FORM_SIZE:
-                throw new \Exception('Превышен допустимый размер');
+                throw new UploaderException('Превышен допустимый размер');
             default:
-                throw new \Exception('Неизвестная ошибка');
+                throw new UploaderException('Неизвестная ошибка');
         }
     }
 
@@ -63,14 +64,14 @@ class Uploader{
         $res = array_search($mime, $this->format, true);
 
         if (false == $res) {
-            throw new \Exception('Неправильный формат данных');
+            throw new UploaderException('Неправильный формат данных');
         }
     }
 
     public function UploadFile()
     {
         if ($this->uploads_dir == null) {
-            throw new \Exception('Не указаны пути');
+            throw new UploaderException('Не указаны пути');
         }
 
         if($this->isUploadedFile()){
@@ -79,14 +80,21 @@ class Uploader{
                 $this->checkFormat();
                 $tmp_name = $_FILES['file']['tmp_name'];
                 $name = $_FILES['file']['name'];
-                if(!move_uploaded_file($tmp_name, $this->uploads_dir . '/' . $name)){
-                    throw new \Exception('Неудалось загрузить файл');
+                $file_path = $this->uploads_dir . '/' . $name;
+                if(!move_uploaded_file($tmp_name, $file_path )){
+                    
+                    return false;
                 }
-            } catch (\Exception $e){
-                throw  new \Exception($e->getMessage());
+                
+                return$file_path;
+                
+            } catch (UploaderException$e){
+                
+                throw  new UploaderException($e->getMessage());
             }
         } else {
-            throw new \Exception('Неудалось загрузить файл');
+            
+            throw new UploaderException('Неудалось загрузить файл');
         }
     }
 }

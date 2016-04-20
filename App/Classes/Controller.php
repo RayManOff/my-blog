@@ -23,6 +23,7 @@ abstract class Controller
         if (false == method_exists($this, $methodName)) {
             throw  new Exception404('Страница не найдена', 404);
         }
+        
         return $this->$methodName();
     }
 

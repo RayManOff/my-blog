@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Classes\Controller;
 use App\Classes\MultiException;
 use App\Http\Uploader;
+use App\Models\Image;
 use App\Models\News;
 
 class Admin extends Controller
@@ -40,7 +41,7 @@ class Admin extends Controller
         $this->view->display(__DIR__ . '/../Templates/News/Create.php');
     }
 
-    protected function actionUploadFile(){
+    protected function actionUploadImage(){
         if ($this->isPost()) {
             try{
                 $file = new Uploader();
@@ -49,8 +50,11 @@ class Admin extends Controller
                     'jpg' => 'image/jpeg',
                     'png' => 'image/png',
                     'gif' => 'image/gif'];
-                
-                $file->UploadFile();
+
+                $path = $file->UploadFile();
+                $image = new Image();
+                $image->image = $path;
+                var_dump($image->save());
             } catch (\Exception $e){
                 $this->view->error = $e;
             }

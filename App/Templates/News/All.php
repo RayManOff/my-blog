@@ -22,7 +22,7 @@
             <div class="panel-footer">
                 <b>Автор статьи:</b>
                 <i><?php if (!empty($article->author)) {
-                        echo $article->author_name;
+                        echo $article->author->author_name;
                     } else {
                         echo 'Нет автора';
                     }; ?></i>

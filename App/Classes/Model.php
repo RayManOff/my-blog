@@ -18,6 +18,7 @@ abstract class Model
         $db = DB::instance();
         $db->setClass(static::class);
         $res = $db->query($sql);
+        
         return $res;
 
     }
@@ -27,6 +28,7 @@ abstract class Model
         $sql = 'SELECT * FROM ' . static::TABLE;
         $db = DB::instance();
         $db->setClass(static::class);
+        
         return $db->queryEach($sql);
     }
 
@@ -37,8 +39,10 @@ abstract class Model
         $db->setClass(static::class);
         $res = $db->query($sql, [':id' => $id]);
         if ([] == $res) {
+            
             return false;
         } else {
+            
             return $res[0];
         }
     }
@@ -51,8 +55,10 @@ abstract class Model
         $db->setClass(static::class);
         $res = $db->query($sql, [':value' => $value]);
         if ([] == $res) {
+            
             return false;
         } else {
+            
             return $res[0];
         }
     }
@@ -106,14 +112,17 @@ abstract class Model
         //var_dump($params);die;
 
         $db = DB::instance();
+        
         return $db->execute($sql, $params);
     }
 
     public function save()
     {
         if ($this->isNew()) {
+            
             return $this->insert();
         } else {
+            
             return $this->update();
         }
     }

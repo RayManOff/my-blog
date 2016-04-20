@@ -12,6 +12,16 @@ class Sender
         return $config['mail'];
     }
 
+    public function validateEmail($email)
+    {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            
+            return true;
+        }
+        
+        return false;
+    }
+
     public function __construct($exceptions = false)
     {
         parent::__construct($exceptions);
@@ -38,6 +48,7 @@ class Sender
             $this->email = $email[0];
             $this->addAddress($email[0], $email[1]);
         } else {
+            
             $this->email = $email;
             $this->addAddress($email, 'recipient');
         }

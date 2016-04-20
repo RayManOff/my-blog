@@ -23,9 +23,10 @@ class News extends Model
         if(empty($v)){
             throw new \Exception('Пустой заголовок');
         }
-        if(strlen($v) > 20){
+        if(strlen($v) > 60){
             throw new \Exception('Слишком длинный заголовок');
         }
+        
         return true;
     }
 
@@ -34,6 +35,7 @@ class News extends Model
         if(empty($v)){
             throw new \Exception('А где же текст');
         }
+        
         return true;
     }
 
@@ -60,12 +62,14 @@ class News extends Model
 
             return Author::findOneById($this->data['author_id']);
         } else {
+            
             return false;
         }
     }
 
     public function issetAuthor()
     {
+        
         return !empty($this->data['author_id']);
     }
 
@@ -75,6 +79,7 @@ class News extends Model
         $db = DB::instance();
         $db->setClass(static::class);
         $res = $db->query($sql);
+        
         return ([] == $res) ? false : $res;
     }
 

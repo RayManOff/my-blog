@@ -7,7 +7,7 @@ return [
         'host' => '127.0.0.1',
         'dbname' => 'test',
         'user' => 'root',
-        'password' => '8520',
+        'password' => '',
     ],
 
     'mail' => [
@@ -23,7 +23,7 @@ return [
     ],
     
     'file' => [
-        'uploads_dir' => '/home/rayman/domains/my-blog/App/file/'
+       'uploads_dir' => '/home/rayman/domains/my-blog/App/trash/'
     ]
     
 ];
