@@ -11,7 +11,7 @@ trait TCollection
     public function innerSet($k, $v)
     {
         $setMethod = 'set' . ucfirst($k);
-
+        
         if (method_exists($this, $setMethod)) {
             $this->$setMethod($v);
             return;

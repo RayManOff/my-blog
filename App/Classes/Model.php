@@ -65,6 +65,7 @@ abstract class Model
 
     public function isNew()
     {
+        
         return empty($this->data['id']);
     }
 
@@ -86,9 +87,9 @@ abstract class Model
             ' VALUES ' . '(' . implode(', ', array_keys($params)) . ')';
         
         $db = DB::instance();
-
         $res = $db->execute($sql, $params);
         $this->data['id'] = $db->getLastInsertId();
+        
         return $res;
     }
 
@@ -109,8 +110,6 @@ abstract class Model
         }
 
         $sql = 'UPDATE ' . static::TABLE . ' SET ' . implode(', ', $columns) . ' WHERE id=:id';
-        //var_dump($params);die;
-
         $db = DB::instance();
         
         return $db->execute($sql, $params);
