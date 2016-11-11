@@ -19,7 +19,6 @@ class News extends Controller
     /**
      * Действие для вывода одной новости по id
      */
-
     protected function actionOne()
     {
         if (false == $this->view->article = \App\Models\News::findOneById($_GET['id'])) {

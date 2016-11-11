@@ -23,15 +23,6 @@ abstract class Model
 
     }
 
-    public static function findAllWithGenerator()
-    {
-        $sql = 'SELECT * FROM ' . static::TABLE;
-        $db = DB::instance();
-        $db->setClass(static::class);
-        
-        return $db->queryEach($sql);
-    }
-
     public static function findOneById(int $id)
     {
         $sql = 'SELECT * FROM ' . static::TABLE . ' WHERE id=:id';
@@ -65,13 +56,11 @@ abstract class Model
 
     public function isNew()
     {
-        
         return empty($this->data['id']);
     }
 
     protected function insert()
     {
-
         $columns = [];
         $params = [];
 
@@ -85,7 +74,7 @@ abstract class Model
 
         $sql = 'INSERT INTO ' . static::TABLE . ' (' . implode(', ', $columns) . ')' .
             ' VALUES ' . '(' . implode(', ', array_keys($params)) . ')';
-        
+
         $db = DB::instance();
         $res = $db->execute($sql, $params);
         $this->data['id'] = $db->getLastInsertId();
@@ -118,10 +107,10 @@ abstract class Model
     public function save()
     {
         if ($this->isNew()) {
-            
+
             return $this->insert();
         } else {
-            
+
             return $this->update();
         }
     }

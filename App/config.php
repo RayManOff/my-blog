@@ -3,12 +3,20 @@
 return [
 
     'db' => [
-        'driver' => 'mysql',
+        'driver' => 'pgsql',
         'host' => '127.0.0.1',
         'dbname' => 'test',
-        'user' => 'root',
-        'password' => '',
+        'user' => 'postgres',
+        'password' => 'postgres',
     ],
+
+//    'mysql' => [
+//        'driver' => 'mysql',
+//        'host' => '127.0.0.1',
+//        'dbname' => 'test',
+//        'user' => 'root',
+//        'password' => '8520',
+//    ],
 
     'mail' => [
         'method' => 'smtp',

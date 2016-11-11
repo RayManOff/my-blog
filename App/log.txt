@@ -18,3 +18,53 @@ massage : Страница не найдена
 file : /home/rayman/domains/my-blog/App/Classes/Controller.php
 line : 24
 
+Tuesday 11th of October 2016 06:40:01 PM
+massage : Ошибка при подключении к базе данных
+file : /home/rayman/web/domains/my-blog/App/Classes/DB.php
+line : 29
+
+Tuesday 11th of October 2016 06:40:40 PM
+massage : Ошибка при подключении к базе данных
+file : /home/rayman/web/domains/my-blog/App/Classes/DB.php
+line : 29
+
+Tuesday 11th of October 2016 06:40:42 PM
+massage : Ошибка при подключении к базе данных
+file : /home/rayman/web/domains/my-blog/App/Classes/DB.php
+line : 29
+
+Tuesday 11th of October 2016 06:40:42 PM
+massage : Ошибка при подключении к базе данных
+file : /home/rayman/web/domains/my-blog/App/Classes/DB.php
+line : 29
+
+Thursday 13th of October 2016 12:36:10 AM
+massage : Ошибка при подключении к базе данных
+file : /home/rayman/web/domains/my-blog/App/Classes/DB.php
+line : 30
+
+Thursday 13th of October 2016 12:36:20 AM
+massage : Ошибка при подключении к базе данных
+file : /home/rayman/web/domains/my-blog/App/Classes/DB.php
+line : 30
+
+Thursday 13th of October 2016 12:36:20 AM
+massage : Ошибка при подключении к базе данных
+file : /home/rayman/web/domains/my-blog/App/Classes/DB.php
+line : 30
+
+Thursday 13th of October 2016 12:36:21 AM
+massage : Ошибка при подключении к базе данных
+file : /home/rayman/web/domains/my-blog/App/Classes/DB.php
+line : 30
+
+Thursday 13th of October 2016 12:36:21 AM
+massage : Ошибка при подключении к базе данных
+file : /home/rayman/web/domains/my-blog/App/Classes/DB.php
+line : 30
+
+Thursday 13th of October 2016 12:36:22 AM
+massage : Ошибка при подключении к базе данных
+file : /home/rayman/web/domains/my-blog/App/Classes/DB.php
+line : 30
+

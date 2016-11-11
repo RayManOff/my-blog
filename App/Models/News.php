@@ -15,7 +15,6 @@ use App\Classes\Model;
 class News extends Model
       implements \ArrayAccess
 {
-
     const TABLE = 'news';
 
     public function validateTitle($v){

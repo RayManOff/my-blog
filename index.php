@@ -2,8 +2,6 @@
 
 require __DIR__ . '/autoload.php';
 
-use App\Controllers;
-
 $url = $_SERVER['REQUEST_URI'];
 $path = explode('/', parse_url($url, PHP_URL_PATH));
 
@@ -12,8 +10,8 @@ $act = (!empty($path[2])) ? ucfirst($path[2]) : 'Index';
 
 $controllerName = '\App\\Controllers\\' . $ctr;
 
-try {
 
+try {
     $controller = new $controllerName;
     $controller->action($act);
 

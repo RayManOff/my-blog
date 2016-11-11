@@ -7,7 +7,6 @@ use App\Classes\Model;
 
 class Admin extends Model
 {
-
     const TABLE = 'admins';
 
     public static function validate($email, $pass)
@@ -24,7 +23,5 @@ class Admin extends Model
                 return true;
             };
         }
-
     }
-
 }
