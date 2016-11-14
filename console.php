@@ -12,5 +12,6 @@ $app = new Application();
 
 $app->add(new \Console\TestCommand());
 $app->add($default);
+
 $app->setDefaultCommand($default->getName());
 $app->run();

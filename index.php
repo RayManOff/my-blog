@@ -10,7 +10,6 @@ $act = (!empty($path[2])) ? ucfirst($path[2]) : 'Index';
 
 $controllerName = '\App\\Controllers\\' . $ctr;
 
-
 try {
     $controller = new $controllerName;
     $controller->action($act);
@@ -31,18 +30,3 @@ try {
     $view->error = $e->getMessage();
     $view->display(__DIR__ . '/App/Templates/Error.php');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
